@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	<bean id="Student" class="org.genspark.martintorrey.Student">
+		<property name="id" value="918473642"></property> 
+		<property name="name" value="Student's Name"></property>
+		<property name="ph">
+			<list value-type="java.util.List">
+				<ref bean="phone1"></ref>
+				<ref bean="phone2"></ref>			
+			</list>
+		</property>
+		<property name="add" ref="Address"></property>
+		
+		<!-- 
+		<constructor-arg index="0" value="918473642"></constructor-arg>
+		<constructor-arg index="1" value="Student's Name"></constructor-arg>
+		<constructor-arg index="2">
+			<list value-type="java.util.List">
+				<ref bean="phone1"></ref>
+				<ref bean="phone2"></ref>			
+			</list>
+		</constructor-arg>
+		<constructor-arg index="3" ref="Address"></constructor-arg>
+		 -->
+	</bean>
+	
+	<bean id="phone1" class="org.genspark.martintorrey.Phone">
+		<constructor-arg index="0" value="487-333-8374"></constructor-arg>
+	</bean>
+	<bean id="phone2" class="org.genspark.martintorrey.Phone">
+		<constructor-arg index="0" value="999-999-9919"></constructor-arg>
+	</bean>
+	
+	<bean id="Address" class="org.genspark.martintorrey.Address">
+		<property name="city" value="Rochester"></property>
+		<property name="state" value="New York"></property>
+		<property name="country" value="United States of America"></property>
+		<property name="zipcode" value="14623"></property>
+	</bean>
+	
+	
+	
+	
+</beans>
